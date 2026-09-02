@@ -3,10 +3,10 @@
   "name": "Ai engineering traduction app",
   "icons": [
     {
-      "src": "https://flaticon.com",
+      "src": "/static/icon.png",
       "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "any"
+      "sizes": "64x64",
+      "purpose": "any maskable"
     }
   ],
   "start_url": "/",
