@@ -155,5 +155,12 @@
 
 <!-- Linking JavaScript from the static folder -->
 <script src="{{ url_for('static', filename='script.js') }}"></script>
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/static/sw.js')
+            .then(() => console.log('Service Worker Registered Successfully'))
+            .catch((err) => console.log('Service Worker Failure:', err));
+    }
+</script>
 </body>
 </html>
