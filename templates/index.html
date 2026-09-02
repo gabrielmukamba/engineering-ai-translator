@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilingual Engineering AI Portfolio</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #0f172a;
+            --background: #f8fafc;
+            --card: #ffffff;
+            --text: #334155;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: var(--card);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        h1 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        textarea, select, button {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        textarea:focus, select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+        }
+
+        button {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #172554;
+        }
+
+        button:disabled {
+            background-color: #94a3b8;
+            cursor: not-allowed;
+        }
+
+        .output-box {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #f1f5f9;
+            border-left: 4px solid var(--primary);
+            border-radius: 4px;
+            min-height: 50px;
+            white-space: pre-wrap;
+        }
+
+        .loading {
+            color: #64748b;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Engineering AI Translator</h1>
+    <p class="subtitle">Translate terms seamlessly across English, French, and Swahili.</p>
+    
+    <div class="form-group">
+        <label for="inputText">Enter Civil/Automotive Engineering terms (English):</label>
+        <textarea id="inputText" placeholder="e.g., Reinforced concrete structural foundations require deep excavation or internal combustion engine diagnostics..."></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="targetLanguage">Target Language:</label>
+        <select id="targetLanguage">
+            <option value="french">French (Français)</option>
+            <option value="swahili">Swahili (Kiswahili)</option>
+        </select>
+    </div>
+
+    <button id="submitBtn">Translate with AI</button>
+
+    <div class="form-group">
+        <label>AI Output:</label>
+        <div id="outputResult" class="output-box">Your translation will appear here...</div>
+    </div>
+</div>
+
+<!-- Linking JavaScript from the static folder -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
