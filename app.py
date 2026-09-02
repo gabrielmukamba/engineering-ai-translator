@@ -34,6 +34,10 @@ def query_gemini_ai(text, language):
 def home():
     return render_template('index.html')
 
+@app.route('/manifest.json')
+def serve_manifest():
+    return app.send_static_file('manifest.json')
+
 @app.route('/translate', methods=['POST'])
 def translate():
     data = request.get_json()
