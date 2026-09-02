@@ -23,7 +23,7 @@ def query_gemini_ai(text, language):
     try:
         # Using the standard lightweight, fast model
         response = client.models.generate_content(
-            model='gemini-2.5-flash',
+            model='gemini-3.6-flash',
             contents=prompt,
         )
         return response.text.strip()
